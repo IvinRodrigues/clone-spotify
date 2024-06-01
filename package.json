@@ -3,13 +3,19 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
+    "commit": "cz",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@clonefy/eslint-config": "*",
     "@clonefy/typescript-config": "*",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.5",
     "prettier": "^3.2.5",
     "turbo": "latest"
   },
@@ -21,5 +27,10 @@
     "apps/*",
     "packages/*",
     "configs/*"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
