@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "@clonefy/assets": "*"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.2.0",
