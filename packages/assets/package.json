@@ -1,0 +1,13 @@
+{
+  "name": "@clonefy/assets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/ts/tokens.js",
+  "types": "build/ts/tokens.d.ts",
+  "scripts": {
+    "build": "npx style-dictionary build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

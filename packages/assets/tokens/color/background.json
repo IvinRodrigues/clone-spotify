@@ -1,0 +1,17 @@
+{
+  "background": {
+    "base": { "value": "#121212" },
+    "highlight": { "value": "#1A1A1A" },
+    "press": { "value": "#000000" },
+    "elevated": {
+      "base": { "value": "#242424" },
+      "highlight": { "value": "#2A2A2A" },
+      "press": { "value": "#000000" }
+    },
+    "tinted": {
+      "base": { "value": "#ffffff12" },
+      "highlight": { "value": "#ffffff1a" },
+      "press": { "value": "#ffffff0a" }
+    }
+  }
+}
