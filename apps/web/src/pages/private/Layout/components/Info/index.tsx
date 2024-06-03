@@ -25,6 +25,7 @@ import { CloseCircle, Heart, More, Musicnote } from "iconsax-react";
 import { useTheme } from "styled-components";
 import { Chip } from "../../../../../components/Chip";
 import { useLayoutEffect, useRef, useState } from "react";
+import { Tooltip } from "../../../../../components/Tooltip";
 
 function Info() {
   const theme = useTheme();
@@ -48,12 +49,18 @@ function Info() {
           Artist name
         </Typography>
         <HeaderButtons>
-          <ButtonIcon size="big" rounded>
+          <ButtonIcon size="big" rounded data-tooltip-id="more-tooltip">
             <More />
           </ButtonIcon>
-          <ButtonIcon size="big" rounded>
+          <Tooltip
+            id="more-tooltip"
+            place="top-end"
+            title="More options for Artist Name"
+          />
+          <ButtonIcon size="big" rounded data-tooltip-id="close-tooltip">
             <CloseCircle />
           </ButtonIcon>
+          <Tooltip id="close-tooltip" place="top" title="Close" />
         </HeaderButtons>
       </Header>
       <OverlayScrollbarsComponent
@@ -74,9 +81,14 @@ function Info() {
             <img src="https://cdn-p.smehost.net/sites/7f9737f2506941499994d771a29ad47a/wp-content/uploads/2021/01/957938-scaled.jpg" />
             <MusicOverviewTitleContainer>
               <Typography variant="title">Music name</Typography>
-              <ButtonIcon size="big" rounded>
+              <ButtonIcon size="big" rounded data-tooltip-id="like-tooltip">
                 <Heart />
               </ButtonIcon>
+              <Tooltip
+                id="like-tooltip"
+                place="top-end"
+                title="Add to Like Songs"
+              />
             </MusicOverviewTitleContainer>
             <Typography variant="text" color={theme.text.subdued}>
               Artist
@@ -216,9 +228,14 @@ function Info() {
               </Typography>
             </SectionPanelHeader>
             <QueuePreview>
-              <ButtonIcon size="medium">
+              <ButtonIcon size="medium" data-tooltip-id="play-next-tooltip">
                 <Musicnote />
               </ButtonIcon>
+              <Tooltip
+                id="play-next-tooltip"
+                place="top-start"
+                title="Play Music name by Artist name"
+              />
               <img src="https://cdn-p.smehost.net/sites/7f9737f2506941499994d771a29ad47a/wp-content/uploads/2021/01/957938-scaled.jpg" />
               <QueueInfo>
                 <Typography variant="subtitle" size={16}>

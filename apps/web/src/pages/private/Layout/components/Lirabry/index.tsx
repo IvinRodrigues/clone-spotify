@@ -44,9 +44,10 @@ function Library() {
         </>
       </Panel>
       <PanelWithScroll>
-        <ButtonIcon size="big">
+        <ButtonIcon size="big" data-tooltip-id="library-tooltip">
           <BookSaved />
         </ButtonIcon>
+        <Tooltip id="library-tooltip" title="Library" />
         <Tooltip
           id="music-tooltip"
           pinned
