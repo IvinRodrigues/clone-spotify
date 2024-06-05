@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
 html,
 body,
 div,
@@ -123,6 +125,9 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+.custom-tooltip {
+  box-shadow: 0 4px 12px #00000068;
 }
 * {
   margin: 0;
