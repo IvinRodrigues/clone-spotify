@@ -11,7 +11,7 @@
       "press": { "value": "#000000" }
     },
     "interactive": {
-      "base": "#141414"
+      "base": { "value": "#141414" }
     },
     "tinted": {
       "base": { "value": "#ffffff12" },
