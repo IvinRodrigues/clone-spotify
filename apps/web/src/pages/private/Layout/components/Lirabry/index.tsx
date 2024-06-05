@@ -63,8 +63,8 @@ function Library() {
           options={{
             scrollbars: {
               theme: "os-theme-light",
-              autoHide: "leave",
-              autoHideDelay: 200,
+              autoHide: "scroll",
+              autoHideDelay: 400,
             },
           }}
           defer

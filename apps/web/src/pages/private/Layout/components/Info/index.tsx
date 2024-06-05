@@ -10,7 +10,7 @@ import { Queue } from "./components/Queue";
 
 function Info() {
   const infoContainerRef = useRef<HTMLDivElement | null>(null);
-  const [infosHeight, setInfosHeight] = useState<string>("800px");
+  const [infosHeight, setInfosHeight] = useState<string>("400px");
 
   useLayoutEffect(() => {
     const totalHeight = infoContainerRef.current?.clientHeight;
@@ -32,8 +32,8 @@ function Info() {
         options={{
           scrollbars: {
             theme: "os-theme-light",
-            autoHide: "leave",
-            autoHideDelay: 200,
+            autoHide: "scroll",
+            autoHideDelay: 400,
           },
         }}
         defer
