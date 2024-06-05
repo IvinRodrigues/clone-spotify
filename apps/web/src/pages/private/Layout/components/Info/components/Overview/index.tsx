@@ -33,12 +33,16 @@ function Overview() {
         <ButtonIcon
           size="big"
           rounded
-          data-tooltip-id="like-tooltip"
+          data-tooltip-id="info-like-tooltip"
           onClick={likeSong}
         >
           <Heart />
         </ButtonIcon>
-        <Tooltip id="like-tooltip" place="top-end" title="Add to Like Songs" />
+        <Tooltip
+          id="info-like-tooltip"
+          place="top-end"
+          title="Add to Liked Songs"
+        />
       </OverviewTitleContainer>
       <Typography
         variant="text"
