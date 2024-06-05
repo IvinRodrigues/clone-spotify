@@ -11,13 +11,21 @@ export function Tooltip({
   title,
   subtitle,
   pinned = false,
-  offset = 0,
+  offset = 4,
   ...rest
 }: TooltipProps) {
   const theme = useTheme();
 
   return (
-    <ReactTooltip id={id} offset={offset} place={place} noArrow {...rest}>
+    <ReactTooltip
+      className="custom-tooltip"
+      id={id}
+      offset={offset}
+      place={place}
+      opacity={1}
+      noArrow
+      {...rest}
+    >
       <TooltipContent>
         <Typography variant="subtitle" size={14}>
           {title}
