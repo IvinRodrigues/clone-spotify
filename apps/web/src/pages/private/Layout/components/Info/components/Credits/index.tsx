@@ -6,13 +6,22 @@ import { CreditArtist } from "./components/CreditArtist";
 function Credits() {
   const theme = useTheme();
 
+  function openCreditsModal() {
+    // logic to open modal
+  }
+
   return (
     <SectionPanel>
       <SectionPanelHeader>
         <Typography variant="title" size={14}>
           Credits
         </Typography>
-        <Typography variant="link" size={14} color={theme.text.subdued}>
+        <Typography
+          variant="link"
+          size={14}
+          color={theme.text.subdued}
+          onClick={openCreditsModal}
+        >
           Show all
         </Typography>
       </SectionPanelHeader>

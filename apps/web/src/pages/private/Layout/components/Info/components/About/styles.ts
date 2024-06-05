@@ -10,6 +10,10 @@ const AboutContainer = styled.div`
   flex-direction: column;
   border-radius: 4px;
   overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const AboutBanner = styled.div<AboutBannerProps>`

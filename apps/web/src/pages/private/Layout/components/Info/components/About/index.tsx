@@ -6,8 +6,17 @@ import { Chip } from "../../../../../../../components/Chip";
 
 function About() {
   const theme = useTheme();
+
+  function openAboutModal() {
+    // logic to open modal
+  }
+
+  function redirectToArtistPage() {
+    // logic to redirect
+  }
+
   return (
-    <AboutContainer>
+    <AboutContainer onClick={openAboutModal}>
       <AboutBanner banner="https://i.scdn.co/image/ab6761610000e5eb0d96912fd002f4e038b4e17e">
         <Typography variant="title" size={14}>
           About the artist
@@ -15,7 +24,12 @@ function About() {
       </AboutBanner>
       <AboutContent>
         <SectionPanelHeader>
-          <Typography variant="title" size={14}>
+          <Typography
+            variant="title"
+            size={14}
+            link
+            onClick={redirectToArtistPage}
+          >
             Artist name
           </Typography>
           <Chip />

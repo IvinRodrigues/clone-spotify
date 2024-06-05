@@ -8,7 +8,7 @@ import {
   BackgroundTintedBase,
   BackgroundTintedHighlight,
   BackgroundTintedPress,
-  // BackgroundInteractiveBase,
+  BackgroundInteractiveBase,
   TextBase,
   TextSubdued,
   TextSuccess,
@@ -29,8 +29,8 @@ const theme = {
       highlight: BackgroundElevatedHighlight,
       press: BackgroundElevatedPress,
     },
-    inreactive: {
-      // base: BackgroundInteractiveBase
+    interactive: {
+      base: BackgroundInteractiveBase,
     },
     tinted: {
       base: BackgroundTintedBase,

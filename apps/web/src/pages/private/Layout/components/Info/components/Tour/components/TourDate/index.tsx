@@ -9,8 +9,12 @@ import {
 function TourDate() {
   const theme = useTheme();
 
+  function redirectToTourPage() {
+    // logic to redirect
+  }
+
   return (
-    <TourDateContainer>
+    <TourDateContainer onClick={redirectToTourPage}>
       <TourDateMonthContainer>
         <Typography variant="title" size={10}>
           Jun
