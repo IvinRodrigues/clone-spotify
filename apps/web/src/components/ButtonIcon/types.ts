@@ -5,6 +5,7 @@ interface ButtonIconProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "big" | "medium" | "small";
   rounded?: boolean;
   children: ReactElement;
+  transparent?: boolean;
 }
 
 export type { ButtonIconProps };
