@@ -5,13 +5,14 @@ const InfoContainer = styled.aside`
   display: flex;
   flex-direction: column;
   border-radius: 12px;
+  grid-area: info;
 `;
 
 const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 0 12px 24px;
+  padding: 0 12px 12px;
   border-radius: 12px;
 `;
 

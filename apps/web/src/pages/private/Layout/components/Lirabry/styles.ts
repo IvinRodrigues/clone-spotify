@@ -6,7 +6,7 @@ const LibraryContainer = styled.aside`
   gap: 8px;
   width: 100%;
   height: 100%;
-  grid-area: "library";
+  grid-area: library;
 `;
 
 const Panel = styled.nav`
@@ -37,7 +37,7 @@ const MusicsContainer = styled.div`
   flex-direction: column;
   gap: 16px;
   align-items: center;
-  padding-bottom: 24px;
+  padding-bottom: 12px;
 `;
 
 const Music = styled.div`
