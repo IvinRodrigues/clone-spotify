@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { ButtonIconProps } from "./types";
 
-const ButtonIconContainer = styled.button<ButtonIconProps>`
+interface ButtonIconContainerProps extends ButtonIconProps {
+  iconVariant: "Bold" | "Broken" | "Bulk" | "Linear" | "Outline" | "TwoTone";
+}
+
+const ButtonIconContainer = styled.button<ButtonIconContainerProps>`
   ${({ rounded, size }) => {
     if (size === "big") {
       return `
@@ -18,7 +22,8 @@ const ButtonIconContainer = styled.button<ButtonIconProps>`
     }
   }}
 
-  background-color: ${({ theme }) => theme.background.interactive.base};
+  background-color: ${({ theme, transparent }) =>
+    transparent ? "transparent" : theme.background.interactive.base};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,7 +39,13 @@ const ButtonIconContainer = styled.button<ButtonIconProps>`
     background-color: ${({ theme }) => theme.background.tinted.base};
 
     path {
-      fill: ${({ theme }) => theme.text.base};
+      ${({ theme, iconVariant }) => {
+        if (iconVariant === "Bold") {
+          return `fill: ${theme.text.base}`;
+        } else {
+          return `stroke: ${theme.text.base}`;
+        }
+      }};
     }
   }
 `;

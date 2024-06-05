@@ -1,4 +1,4 @@
-import { cloneElement } from "react";
+import { ReactElement, cloneElement } from "react";
 import { ButtonIconContainer } from "./styles";
 import { ButtonIconProps } from "./types";
 import { useTheme } from "styled-components";
@@ -8,16 +8,23 @@ function ButtonIcon({
   size = "medium",
   rounded = false,
   children,
+  transparent = false,
   ...rest
 }: ButtonIconProps) {
   const theme = useTheme();
   const icon = cloneElement(children, {
     size: getIconSize(size),
     color: getIconColor(active),
-    variant: getIconVariant(active),
+    variant: getIconVariant(active, children),
   });
 
-  function getIconVariant(active: boolean) {
+  function getIconVariant(active: boolean, icon: ReactElement) {
+    const hasVariant = icon.props !== undefined;
+
+    if (hasVariant) {
+      return icon.props.variant;
+    }
+
     if (active) {
       return "Bold";
     }
@@ -46,6 +53,8 @@ function ButtonIcon({
       active={active}
       size={size}
       rounded={rounded}
+      transparent={transparent}
+      iconVariant={getIconVariant(active, children)}
       {...rest}
     >
       {icon}
