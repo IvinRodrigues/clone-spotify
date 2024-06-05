@@ -7,14 +7,18 @@ function Typography({
   children,
   size = undefined,
   color = undefined,
+  link = false,
   ...rest
 }: TypographyPops) {
+  const finalAs = link ? "a" : as;
+
   return (
     <TypographyText
       variant={variant}
-      as={as}
+      as={finalAs}
       size={size}
       color={color}
+      link={link}
       {...rest}
     >
       {children}

@@ -5,6 +5,7 @@ interface TypographyPops extends HTMLAttributes<HTMLSpanElement> {
   as?: string;
   size?: number;
   color?: string;
+  link?: boolean;
 }
 
 export type { TypographyPops };

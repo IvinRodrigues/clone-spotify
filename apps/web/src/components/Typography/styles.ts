@@ -42,6 +42,19 @@ const TypographyText = styled.span<TypographyPops>`
         `;
     }
   }}
+
+  ${({ link }) => {
+    if (link) {
+      return `
+        text-decoration: solid underline 2px transparent;
+
+        &:hover {
+          cursor: pointer;
+          text-decoration: solid underline 2px;
+        }
+      `;
+    }
+  }}
 `;
 
 export { TypographyText };
