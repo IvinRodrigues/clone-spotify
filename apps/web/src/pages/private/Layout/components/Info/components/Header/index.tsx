@@ -24,7 +24,7 @@ function Header() {
       </Typography>
       <HeaderButtons>
         <ButtonIcon
-          size="big"
+          size="medium"
           rounded
           data-tooltip-id="more-tooltip"
           onClick={moreOptionsToggleVisibility}
@@ -37,7 +37,7 @@ function Header() {
           title="More options for Artist Name"
         />
         <ButtonIcon
-          size="big"
+          size="medium"
           rounded
           data-tooltip-id="close-tooltip"
           onClick={closeInfo}

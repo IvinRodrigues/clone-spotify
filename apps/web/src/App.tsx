@@ -4,7 +4,10 @@ import { theme } from "./styles/theme/theme";
 import { ThemeProvider } from "styled-components";
 
 import "./styles/reset.css";
+import "swiper/css";
+import "atropos/css";
 import "overlayscrollbars/overlayscrollbars.css";
+import "aos/dist/aos.css";
 
 function App() {
   return (

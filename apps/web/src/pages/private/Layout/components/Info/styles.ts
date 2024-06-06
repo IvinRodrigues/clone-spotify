@@ -1,4 +1,9 @@
-import styled from "styled-components";
+import { styled, keyframes } from "styled-components";
+
+const fadeLeft = keyframes`
+ 0% { opacity: 0; transform: translateX(20px) }
+ 100% { opacity: 1; transform: translateY(0) }
+`;
 
 const InfoContainer = styled.aside`
   background-color: ${({ theme }) => theme.background.default.base};
@@ -6,6 +11,13 @@ const InfoContainer = styled.aside`
   flex-direction: column;
   border-radius: 12px;
   grid-area: info;
+  overflow: hidden;
+  border: 1px solid #ffffff0d;
+  opacity: 0;
+  animation-name: ${fadeLeft};
+  animation-duration: 1.6s;
+  animation-delay: 0.8s;
+  animation-fill-mode: forwards;
 `;
 
 const Content = styled.div`
@@ -22,7 +34,8 @@ const SectionPanel = styled.div`
   flex-direction: column;
   gap: 18px;
   padding: 24px 12px;
-  border-radius: 4px;
+  border-radius: 12px;
+  border: 1px solid #ffffff0d;
 `;
 
 const SectionPanelHeader = styled.div`

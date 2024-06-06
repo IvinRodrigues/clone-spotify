@@ -12,11 +12,7 @@ const Grid = styled.div`
   grid-template-areas:
     "library main   info"
     "player  player player";
+  overflow: hidden;
 `;
 
-const MainContent = styled.main`
-  grid-area: "main";
-  background-color: red;
-`;
-
-export { Grid, MainContent };
+export { Grid };

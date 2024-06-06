@@ -24,7 +24,6 @@ const PlayButton = styled.button`
   &:hover {
     cursor: pointer;
     background-color: ${({ theme }) => theme.text.success};
-    transform: scale(1.1);
 
     path {
       fill: ${({ theme }) => theme.text.base};

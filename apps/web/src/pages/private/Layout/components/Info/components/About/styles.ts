@@ -8,8 +8,10 @@ const AboutContainer = styled.div`
   background-color: ${({ theme }) => theme.background.elevated.base};
   display: flex;
   flex-direction: column;
-  border-radius: 4px;
+  border-radius: 12px;
   overflow: hidden;
+  border: 1px solid #ffffff0d;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     cursor: pointer;
