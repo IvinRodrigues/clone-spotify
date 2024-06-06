@@ -11,6 +11,7 @@ function Typography({
   ...rest
 }: TypographyPops) {
   const finalAs = link ? "a" : as;
+  const finalTabIndex = variant === "link" || link ? 0 : undefined;
 
   return (
     <TypographyText
@@ -19,6 +20,7 @@ function Typography({
       size={size}
       color={color}
       link={link}
+      tabIndex={finalTabIndex}
       {...rest}
     >
       {children}

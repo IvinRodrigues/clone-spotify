@@ -8,6 +8,7 @@ const TypographyText = styled.span<TypographyPops>`
   vertical-align: middle;
   line-height: auto;
   transition: all 0.2s ease-in-out;
+  width: fit-content;
 
   ${({ size, color, theme, variant }) => {
     if (variant === "title") {
