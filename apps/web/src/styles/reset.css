@@ -129,9 +129,16 @@ table {
 .custom-tooltip {
   box-shadow: 0 4px 12px #00000068;
 }
+.custom-scrollbar {
+  overflow-x: hidden;
+}
+.card-inner {
+  padding: 12px;
+}
 * {
   margin: 0;
   padding: 0;
   border: 0;
   box-sizing: border-box;
+  user-select: none;
 }
