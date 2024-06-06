@@ -4,7 +4,6 @@ import { SectionContainer, SectionContent, SectionHeader } from "./styles";
 import { Card } from "../../../../components/Card";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { HTMLAttributes } from "react";
-import { redirect } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useOutletAnimation } from "../../../../hooks/useOutletAnimation";
 
@@ -40,7 +39,6 @@ function Section(props: HTMLAttributes<HTMLDivElement>) {
         <Swiper spaceBetween={12} slidesPerView="auto">
           {artists.map((artist) => (
             <SwiperSlide key={artist.id} style={{ width: "fit-content" }}>
-              {/* <Link to={`artist/${artist.id}`}> */}
               <Card
                 image="https://cdn-p.smehost.net/sites/7f9737f2506941499994d771a29ad47a/wp-content/uploads/2021/01/957938-scaled.jpg"
                 type="music"
@@ -48,7 +46,6 @@ function Section(props: HTMLAttributes<HTMLDivElement>) {
                 text="test text"
                 onClick={redirectToArtist}
               />
-              {/* </Link> */}
             </SwiperSlide>
           ))}
         </Swiper>
