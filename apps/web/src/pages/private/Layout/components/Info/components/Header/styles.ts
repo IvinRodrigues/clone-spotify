@@ -5,7 +5,13 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 12px 16px;
+  padding: 12px;
+  margin-bottom: 12px;
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid #ffffff0d;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 `;
 
 const HeaderButtons = styled.div`

@@ -27,6 +27,7 @@ const ButtonIconContainer = styled.button<ButtonIconContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid ${({ rounded }) => (rounded ? "#ffffff0d" : "transparent")};
   transition: 0.2s all ease-in-out;
 
   svg,
