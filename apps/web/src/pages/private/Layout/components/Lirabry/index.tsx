@@ -1,6 +1,5 @@
 import { BookSaved, Home, SearchNormal1 } from "iconsax-react";
 import { ButtonIcon } from "../../../../../components/ButtonIcon";
-import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
 import { Tooltip } from "../../../../../components/Tooltip";
 import {
   LibraryContainer,
@@ -9,24 +8,19 @@ import {
   Panel,
   MusicsContainer,
 } from "./styles";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef } from "react";
+import { Scroll } from "../../../../../components/Scroll";
 
 function Library() {
   const libraryContainer = useRef<HTMLDivElement | null>(null);
-  const [musicsHeight, setMusicsHeight] = useState<string>("600px");
 
-  useLayoutEffect(() => {
-    const totalHeight = libraryContainer.current?.clientHeight;
+  const artists = Array.from({ length: 25 }).map((item, index) => ({
+    id: index,
+    name: "Artist name",
+    image:
+      "https://cdn-p.smehost.net/sites/7f9737f2506941499994d771a29ad47a/wp-content/uploads/2021/01/957938-scaled.jpg",
+  }));
 
-    const scrollMusics =
-      libraryContainer.current?.querySelector("#scrollMusics");
-    const scrollOffsetTop = scrollMusics?.getBoundingClientRect().top;
-
-    if (totalHeight !== undefined && scrollOffsetTop !== undefined) {
-      const finalHeight = totalHeight - scrollOffsetTop + 8;
-      setMusicsHeight(`${finalHeight}px`);
-    }
-  }, []);
   return (
     <LibraryContainer ref={libraryContainer}>
       <Panel>
@@ -48,69 +42,30 @@ function Library() {
           <BookSaved />
         </ButtonIcon>
         <Tooltip id="library-tooltip" title="Library" />
-        <Tooltip
-          id="music-tooltip"
-          pinned
-          title="Music"
-          subtitle="Artist name"
-          offset={18}
-        />
-        <OverlayScrollbarsComponent
-          id="scrollMusics"
-          className="overlayscrollbars-react"
-          style={{ height: musicsHeight }}
-          element="div"
-          options={{
-            scrollbars: {
-              theme: "os-theme-light",
-              autoHide: "scroll",
-              autoHideDelay: 400,
-            },
-          }}
-          defer
-        >
+        {artists.map((artist) => (
+          <Tooltip
+            id={`music-tooltip-${artist.id}`}
+            title={artist.name}
+            pinned
+          />
+        ))}
+        <Scroll containerRef={libraryContainer} animatedItems>
           <MusicsContainer>
-            <Music data-tooltip-id="music-tooltip" />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
-            <Music />
+            {artists.map((artist, index) => {
+              const delay = index < 12 ? `${index}00` : 0;
+              return (
+                <Music
+                  src={artist.image}
+                  data-tooltip-id={`music-tooltip-${artist.id}`}
+                  data-aos="fade-right"
+                  data-aos-duration="1000"
+                  data-aos-delay={delay}
+                  tabIndex={0}
+                />
+              );
+            })}
           </MusicsContainer>
-        </OverlayScrollbarsComponent>
+        </Scroll>
       </PanelWithScroll>
     </LibraryContainer>
   );
