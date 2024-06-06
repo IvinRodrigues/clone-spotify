@@ -1,6 +1,7 @@
+import { Layout } from "../pages/private/Layout";
 import { createBrowserRouter } from "react-router-dom";
 import { Home } from "../pages/private/Home";
-import { Layout } from "../pages/private/Layout";
+import { Artist } from "../pages/private/Artist";
 
 const mainRouter = createBrowserRouter([
   {
@@ -8,8 +9,8 @@ const mainRouter = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/",
-        element: <Home />,
+        path: "artist/:id",
+        element: <Artist />,
       },
     ],
   },
