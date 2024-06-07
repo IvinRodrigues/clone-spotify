@@ -5,6 +5,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   image: string;
   title: string;
   text?: string;
+  onPlay?: () => void;
 }
 
 export type { CardProps };

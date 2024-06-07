@@ -2,21 +2,23 @@ import { useTheme } from "styled-components";
 import { Chip } from "../../../../../../../../../components/Chip";
 import { Typography } from "../../../../../../../../../components/Typography";
 import { CreditArtistContainer, CreditArtistInfo } from "./styles";
+import { CreditArtistProps } from "./types";
 
-function CreditArtist() {
+function CreditArtist({ id, name, role }: CreditArtistProps) {
   const theme = useTheme();
+  const hasId = id !== undefined;
 
   return (
     <CreditArtistContainer>
       <CreditArtistInfo>
-        <Typography variant="subtitle" size={14} link>
-          Artist name
+        <Typography variant="subtitle" size={14} link={hasId}>
+          {name}
         </Typography>
         <Typography variant="text" size={12} color={theme.text.subdued}>
-          Role
+          {role}
         </Typography>
       </CreditArtistInfo>
-      <Chip />
+      {hasId && <Chip />}
     </CreditArtistContainer>
   );
 }

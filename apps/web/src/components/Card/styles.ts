@@ -1,9 +1,35 @@
 import styled from "styled-components";
 
-const CardContainer = styled.div``;
+interface CardContentInterface {
+  type: "music" | "artist";
+}
+
+const CardContainer = styled.div`
+  position: relative;
+`;
+
+const CardContentContainer = styled.div<CardContentInterface>`
+  width: 232px;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: ${({ type }) => (type === "artist" ? "50%" : "12px")};
+    object-fit: cover;
+  }
+
+  &:hover,
+  &:focus-within {
+    button {
+      opacity: 1;
+      top: 150px;
+    }
+  }
+`;
 
 const CardContent = styled.div`
-  width: 232px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -15,21 +41,10 @@ const CardContent = styled.div`
   overflow: hidden;
   position: relative;
 
-  img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 12px;
-  }
-
   &:hover,
   &:focus-within {
     cursor: pointer;
     background-color: ${({ theme }) => theme.background.tinted.base};
-
-    button {
-      opacity: 1;
-      top: 150px;
-    }
   }
 `;
 
@@ -42,7 +57,7 @@ const PlayButton = styled.button`
   border-radius: 50%;
   background-color: ${({ theme }) => theme.text.success};
   position: absolute;
-  top: 160px;
+  top: 172px;
   right: 24px;
   transition: all 0.2s ease-in-out;
   opacity: 0;
@@ -56,4 +71,4 @@ const PlayButton = styled.button`
   }
 `;
 
-export { CardContainer, CardContent, PlayButton };
+export { CardContainer, CardContentContainer, CardContent, PlayButton };
