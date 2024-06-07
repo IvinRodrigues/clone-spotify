@@ -28,7 +28,7 @@ function Header() {
         <Items>
           <ButtonIcon
             size="medium"
-            rounded
+            rounded={true}
             data-tooltip-id="main-header-back-tooltip"
             onClick={goBack}
           >
@@ -37,7 +37,7 @@ function Header() {
           <Tooltip id="main-header-back-tooltip" place="top" title="Go back" />
           <ButtonIcon
             size="medium"
-            rounded
+            rounded={true}
             data-tooltip-id="main-header-forward-tooltip"
           >
             <ArrowRight2 />
@@ -51,7 +51,7 @@ function Header() {
         <Items>
           <ButtonIcon
             size="medium"
-            rounded
+            rounded={true}
             data-tooltip-id="main-header-new-tooltip"
           >
             <Notification />
@@ -63,7 +63,7 @@ function Header() {
           />
           <ButtonIcon
             size="medium"
-            rounded
+            rounded={true}
             data-tooltip-id="main-header-activity-tooltip"
           >
             <Profile2User />
@@ -75,7 +75,7 @@ function Header() {
           />
           <ButtonIcon
             size="medium"
-            rounded
+            rounded={true}
             data-tooltip-id="main-header-profile-tooltip"
           >
             <Profile2User />

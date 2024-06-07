@@ -1,11 +1,24 @@
 import { useTheme } from "styled-components";
 import { Typography } from "../Typography";
-import { CardContainer, CardContent, PlayButton } from "./styles";
+import {
+  CardContainer,
+  CardContent,
+  CardContentContainer,
+  PlayButton,
+} from "./styles";
 import { CardProps } from "./types";
 import Atropos from "atropos/react";
 import { Play } from "iconsax-react";
 
-function Card({ type = "music", image, title, text, ...rest }: CardProps) {
+function Card({
+  type = "music",
+  image,
+  title,
+  text,
+  onClick = () => {},
+  onPlay = () => {},
+  ...rest
+}: CardProps) {
   const theme = useTheme();
 
   return (
@@ -20,23 +33,31 @@ function Card({ type = "music", image, title, text, ...rest }: CardProps) {
         highlight={false}
         shadow={false}
       >
-        <CardContent tabIndex={0} {...rest} data-atropos-offset="1">
-          <img src={image} data-atropos-offset="1" />
-          <Typography variant="title" size={16} data-atropos-offset="5">
-            {title}
-          </Typography>
-          <Typography
-            variant="text"
-            size={14}
-            color={theme.text.subdued}
-            data-atropos-offset="5"
-          >
-            {text}
-          </Typography>
-          <PlayButton data-atropos-offset="15">
+        <CardContentContainer
+          tabIndex={0}
+          {...rest}
+          data-atropos-offset="1"
+          type={type}
+        >
+          <CardContent onClick={onClick}>
+            <img src={image} data-atropos-offset="1" />
+            <Typography variant="title" size={16} data-atropos-offset="5">
+              {title}
+            </Typography>
+            <Typography
+              variant="text"
+              size={14}
+              color={theme.text.subdued}
+              style={{ lineHeight: "18px" }}
+              data-atropos-offset="2"
+            >
+              {text}
+            </Typography>
+          </CardContent>
+          <PlayButton data-atropos-offset="15" onClick={onPlay}>
             <Play variant="Bold" />
           </PlayButton>
-        </CardContent>
+        </CardContentContainer>
       </Atropos>
     </CardContainer>
   );

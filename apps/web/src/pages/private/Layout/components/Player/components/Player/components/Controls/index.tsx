@@ -12,7 +12,7 @@ function Controls() {
     <ControlsWrapper>
       <ButtonIcon
         size="medium"
-        rounded
+        rounded={true}
         transparent
         data-tooltip-id="player-shuffle-tooltip"
         onClick={shuffleQueue}
@@ -22,7 +22,7 @@ function Controls() {
       <Tooltip id="player-shuffle-tooltip" place="top" title="Enable suffle" />
       <ButtonIcon
         size="medium"
-        rounded
+        rounded={true}
         transparent
         data-tooltip-id="player-previous-tooltip"
         onClick={shuffleQueue}
@@ -40,7 +40,7 @@ function Controls() {
       />
       <ButtonIcon
         size="medium"
-        rounded
+        rounded={true}
         transparent
         data-tooltip-id="player-next-tooltip"
         onClick={shuffleQueue}
@@ -50,7 +50,7 @@ function Controls() {
       <Tooltip id="player-next-tooltip" place="top" title="Next song" />
       <ButtonIcon
         size="medium"
-        rounded
+        rounded={true}
         transparent
         data-tooltip-id="player-loop-tooltip"
         onClick={shuffleQueue}

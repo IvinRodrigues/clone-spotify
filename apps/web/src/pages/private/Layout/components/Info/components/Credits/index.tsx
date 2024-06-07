@@ -2,8 +2,9 @@ import { useTheme } from "styled-components";
 import { Typography } from "../../../../../../../components/Typography";
 import { SectionPanel, SectionPanelHeader } from "../../styles";
 import { CreditArtist } from "./components/CreditArtist";
+import { PropsWithDetails } from "../../types";
 
-function Credits() {
+function Credits({ details }: PropsWithDetails) {
   const theme = useTheme();
 
   function openCreditsModal() {
@@ -25,9 +26,15 @@ function Credits() {
           Show all
         </Typography>
       </SectionPanelHeader>
-      <CreditArtist />
-      <CreditArtist />
-      <CreditArtist />
+      <CreditArtist id={details.id} name={details.name} role="Main Artist" />
+      {details.credits?.map((artist) => (
+        <CreditArtist
+          key={artist.id}
+          id={artist.id}
+          name={artist.name}
+          role={artist.role}
+        />
+      ))}
     </SectionPanel>
   );
 }

@@ -35,7 +35,7 @@ function Options() {
     <OptionsContainer>
       <ButtonIcon
         size="medium"
-        rounded
+        rounded={true}
         transparent
         data-tooltip-id="player-info-tooltip"
         onClick={openInfo}
@@ -45,7 +45,7 @@ function Options() {
       <Tooltip id="player-info-tooltip" place="top" title="Now playing view" />
       <ButtonIcon
         size="medium"
-        rounded
+        rounded={true}
         transparent
         data-tooltip-id="player-lyrics-tooltip"
         onClick={redirectToLyrics}
@@ -55,7 +55,7 @@ function Options() {
       <Tooltip id="player-lyrics-tooltip" place="top" title="Lyrics" />
       <ButtonIcon
         size="medium"
-        rounded
+        rounded={true}
         transparent
         data-tooltip-id="player-queue-tooltip"
         onClick={openQueue}
@@ -65,7 +65,7 @@ function Options() {
       <Tooltip id="player-queue-tooltip" place="top" title="Queue" />
       <ButtonIcon
         size="medium"
-        rounded
+        rounded={true}
         transparent
         data-tooltip-id="player-volume-tooltip"
         onClick={muteVolume}
@@ -76,7 +76,7 @@ function Options() {
       <Progress size={100} />
       <ButtonIcon
         size="medium"
-        rounded
+        rounded={true}
         transparent
         data-tooltip-id="player-full-screen-tooltip"
         onClick={openFullScreen}

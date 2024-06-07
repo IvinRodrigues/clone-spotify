@@ -4,9 +4,12 @@ import { Typography } from "../../../../../../../components/Typography";
 import { OverviewContainer, OverviewTitleContainer } from "./styles";
 import { Tooltip } from "../../../../../../../components/Tooltip";
 import { useTheme } from "styled-components";
+import { useQueueStore } from "../../../../../../../stores/queue";
+import { PropsWithDetails } from "../../types";
 
-function Overview() {
+function Overview({ details }: PropsWithDetails) {
   const theme = useTheme();
+  const { queue } = useQueueStore();
 
   function redirectToAlbum() {
     // logic to redirect
@@ -22,17 +25,14 @@ function Overview() {
 
   return (
     <OverviewContainer>
-      <img
-        src="https://cdn-p.smehost.net/sites/7f9737f2506941499994d771a29ad47a/wp-content/uploads/2021/01/957938-scaled.jpg"
-        onClick={redirectToAlbum}
-      />
+      <img src={queue?.album.picture} onClick={redirectToAlbum} />
       <OverviewTitleContainer>
         <Typography variant="title" link onClick={redirectToAlbum}>
-          Music name
+          {queue.name}
         </Typography>
         <ButtonIcon
           size="big"
-          rounded
+          rounded={true}
           data-tooltip-id="info-like-tooltip"
           onClick={likeSong}
         >
@@ -50,7 +50,7 @@ function Overview() {
         link
         onClick={redirectToArtist}
       >
-        Artist
+        {details.name}
       </Typography>
     </OverviewContainer>
   );

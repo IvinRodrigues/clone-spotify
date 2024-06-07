@@ -3,8 +3,9 @@ import { ButtonIcon } from "../../../../../../../components/ButtonIcon";
 import { Typography } from "../../../../../../../components/Typography";
 import { HeaderButtons, HeaderContainer } from "./styles";
 import { Tooltip } from "../../../../../../../components/Tooltip";
+import { PropsWithDetails } from "../../types";
 
-function Header() {
+function Header({ details }: PropsWithDetails) {
   function redirectToArtist() {
     // logic to redirect
   }
@@ -20,12 +21,12 @@ function Header() {
   return (
     <HeaderContainer>
       <Typography variant="title" size={14} link onClick={redirectToArtist}>
-        Artist name
+        {details.name}
       </Typography>
       <HeaderButtons>
         <ButtonIcon
           size="medium"
-          rounded
+          rounded={true}
           data-tooltip-id="more-tooltip"
           onClick={moreOptionsToggleVisibility}
         >
@@ -34,11 +35,11 @@ function Header() {
         <Tooltip
           id="more-tooltip"
           place="top-end"
-          title="More options for Artist Name"
+          title={`More options for ${details.name}`}
         />
         <ButtonIcon
           size="medium"
-          rounded
+          rounded={true}
           data-tooltip-id="close-tooltip"
           onClick={closeInfo}
         >

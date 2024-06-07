@@ -4,9 +4,11 @@ import { Typography } from "../../../../../../../components/Typography";
 import { InfoContainer, OverviewContainer } from "./styles";
 import { Tooltip } from "../../../../../../../components/Tooltip";
 import { useTheme } from "styled-components";
+import { useQueueStore } from "../../../../../../../stores/queue";
 
 function Overview() {
   const theme = useTheme();
+  const { queue } = useQueueStore();
 
   function openInfo() {
     // logic to open
@@ -26,13 +28,10 @@ function Overview() {
 
   return (
     <OverviewContainer>
-      <img
-        src="https://cdn-p.smehost.net/sites/7f9737f2506941499994d771a29ad47a/wp-content/uploads/2021/01/957938-scaled.jpg"
-        onClick={openInfo}
-      />
+      <img src={queue?.album.picture} onClick={openInfo} />
       <InfoContainer>
         <Typography variant="subtitle" size={14} link onClick={redirectToAlbum}>
-          Song name
+          {queue?.name}
         </Typography>
         <Typography
           variant="text"
@@ -41,12 +40,12 @@ function Overview() {
           link
           onClick={redirectToArtist}
         >
-          Artist name
+          {queue?.author.name}
         </Typography>
       </InfoContainer>
       <ButtonIcon
         size="medium"
-        rounded
+        rounded={true}
         data-tooltip-id="player-like-tooltip"
         onClick={likeSong}
       >

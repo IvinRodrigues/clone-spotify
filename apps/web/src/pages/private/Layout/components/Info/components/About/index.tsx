@@ -3,8 +3,9 @@ import { Typography } from "../../../../../../../components/Typography";
 import { AboutBanner, AboutContainer, AboutContent } from "./styles";
 import { SectionPanelHeader } from "../../styles";
 import { Chip } from "../../../../../../../components/Chip";
+import { PropsWithDetails } from "../../types";
 
-function About() {
+function About({ details }: PropsWithDetails) {
   const theme = useTheme();
 
   function openAboutModal() {
@@ -17,7 +18,7 @@ function About() {
 
   return (
     <AboutContainer onClick={openAboutModal}>
-      <AboutBanner banner="https://i.scdn.co/image/ab6761610000e5eb0d96912fd002f4e038b4e17e">
+      <AboutBanner banner={details.banner}>
         <Typography variant="title" size={14}>
           About the artist
         </Typography>
@@ -30,16 +31,15 @@ function About() {
             link
             onClick={redirectToArtistPage}
           >
-            Artist name
+            {details.name}
           </Typography>
           <Chip />
         </SectionPanelHeader>
         <Typography variant="text" color={theme.text.subdued}>
-          10,000 monthly listeners
+          {details.listeners} monthly listeners
         </Typography>
         <Typography variant="text" color={theme.text.subdued}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          {details.description}
         </Typography>
       </AboutContent>
     </AboutContainer>
